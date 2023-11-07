@@ -23,10 +23,10 @@
 * [x] Signin Interface
 * [x] Signup Interface
 * [ ] Admin Interface
-* [ ] Profile Interface
+* [x] Profile Interface
 * [ ] Dashboard live data analytics
-* [ ] signup function
-* [ ] signin function
+* [x] signup function
+* [x] signin function
 * [ ] admin live confidential info view
 * [ ] enrollment form
 
