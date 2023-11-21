@@ -24,11 +24,10 @@
 * [x] Signup Interface
 * [ ] Admin Interface
 * [x] Profile Interface
-* [ ] Dashboard live data analytics
 * [x] signup function
 * [x] signin function
 * [ ] admin live confidential info view
-* [ ] enrollment form
+* [x] enrollment form
 
 
 ## :wave: Contributing
