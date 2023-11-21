@@ -30,57 +30,20 @@ public class Dashboard extends JPanel {
         add(panel);
         panel.setLayout(null);
         
-        JLabel lblNewLabel_2 = new JLabel("Total User :");
-        lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 15));
-        lblNewLabel_2.setForeground(new Color(255, 255, 255));
-        lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel_2.setBounds(37, 245, 101, 28);
-        panel.add(lblNewLabel_2);
-        
-        JLabel lblNewLabel_3 = new JLabel("0");
-        lblNewLabel_2.setLabelFor(lblNewLabel_3);
-        lblNewLabel_3.setForeground(new Color(255, 255, 255));
-        lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 13));
-        lblNewLabel_3.setBounds(132, 245, 102, 30);
-        panel.add(lblNewLabel_3);
-        
-        JLabel lblNewLabel_4 = new JLabel("");
-        lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel_4.setIcon(new ImageIcon(System.getProperty("user.dir")+"\\src\\user.png"));
-        lblNewLabel_4.setBounds(10, 105, 207, 149);
-        panel.add(lblNewLabel_4);
-        
-        JLabel lblNewLabel_4_1 = new JLabel("");
-        lblNewLabel_4_1.setBounds(302, 105, 207, 149);
-        panel.add(lblNewLabel_4_1);
-        lblNewLabel_4_1.setIcon(new ImageIcon(System.getProperty("user.dir")+"\\src\\enroll.png"));
-        lblNewLabel_4_1.setHorizontalAlignment(SwingConstants.CENTER);
-        
-        JLabel lblNewLabel_2_1 = new JLabel("Total Enrollees :");
-        lblNewLabel_2_1.setBounds(332, 245, 126, 28);
-        panel.add(lblNewLabel_2_1);
-        lblNewLabel_2_1.setBackground(new Color(255, 255, 255));
-        lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel_2_1.setForeground(new Color(255, 255, 255));
-        lblNewLabel_2_1.setFont(new Font("Tahoma", Font.BOLD, 15));
-        
-        JLabel lblNewLabel_3_1 = new JLabel("0");
-        lblNewLabel_2_1.setLabelFor(lblNewLabel_3_1);
-        lblNewLabel_3_1.setBounds(460, 245, 102, 30);
-        panel.add(lblNewLabel_3_1);
-        lblNewLabel_3_1.setForeground(new Color(255, 255, 255));
-        lblNewLabel_3_1.setFont(new Font("Tahoma", Font.BOLD, 13));
-        
-        JLabel lblNewLabel_1 = new JLabel("DASHBOARD");
+        JLabel lblNewLabel_1 = new JLabel("Enrollment ");
         lblNewLabel_1.setBounds(87, 11, 395, 104);
         panel.add(lblNewLabel_1);
         lblNewLabel_1.setForeground(new Color(255, 255, 255));
         lblNewLabel_1.setFont(new Font("Serif", Font.BOLD, 50));
         lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
         
+        JLabel lblNewLabel_2 = new JLabel("<html><h1 style='color: white;'><strong>Holy Rosary Academy of Las Piñas City</strong></h1><p style='color: #d4daff; font-family: cursive;'>Education founded on a love and respect of the Supreme Being superimposes on the learner the values that predicate academic excellence. In our pursuit for excellence, our entire school community dedicates itself to God, country, and the Filipino people.</p></html>");
+        lblNewLabel_2.setVerticalAlignment(SwingConstants.TOP);
+        lblNewLabel_2.setBounds(32, 115, 501, 176);
+        panel.add(lblNewLabel_2);
+        
         JPanel panel_1 = new JPanel();
         panel_1.setBounds(294, 472, 172, 61);
         add(panel_1);
 	}
-
 }

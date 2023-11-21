@@ -1,4 +1,3 @@
-
 public class User {
 
 
@@ -8,7 +7,29 @@ public class User {
 	private String birtday;
 	private String gender;
 	private String passwordHash;
-	
+	private String name;
+	private String lrn;
+	private String addrress;
+	public String getAddrress() {
+		return addrress;
+	}
+	public void setAddrress(String addrress) {
+		this.addrress = addrress;
+	}
+	public String getLrn() {
+		return lrn;
+	}
+	public void setLrn(String lrn) {
+		this.lrn = lrn;
+	}
+
+	private int status;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getUsername() {
 		return username;
 	}
@@ -45,7 +66,12 @@ public class User {
 	public void setPasswordHash(String passwordHash) {
 		this.passwordHash = passwordHash;
 	}
-	
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	
 	@Override
 	public String toString() {

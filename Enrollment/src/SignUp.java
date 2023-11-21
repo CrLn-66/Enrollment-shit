@@ -8,22 +8,27 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JCheckBoxMenuItem;
 
 public class SignUp extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-
-	private JTextField textField;
-	private JPasswordField passwordField;
-	private JTextField textField_1;
+	private Listener listen;	
+	private JTextField name;
+	private JPasswordField password;
+	private JTextField email;
+	private JTextField username;
 	public SignUp() {
 	        setBackground(new Color(128, 0, 255));
 	        setLayout(null);
@@ -49,28 +54,28 @@ public class SignUp extends JPanel {
 	        lblNewLabel_6_1.setBounds(191, 11, 250, 60);
 	        panel_2_1.add(lblNewLabel_6_1);
 	        
-	        JLabel as_1 = new JLabel("Username : ");
+	        JLabel as_1 = new JLabel("Name : ");
 	        as_1.setForeground(Color.WHITE);
 	        as_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-	        as_1.setBounds(10, 77, 81, 14);
+	        as_1.setBounds(10, 113, 81, 14);
 	        panel_2_1.add(as_1);
 	        
-	        textField = new JTextField();
-	        textField.setColumns(10);
-	        textField.setBounds(84, 74, 172, 20);
-	        panel_2_1.add(textField);
-	        
+	        name = new JTextField();
+	        name.setColumns(10);
+	        name.setBounds(84, 110, 172, 20);
+	        panel_2_1.add(name);
 	        JLabel lblPassword_1 = new JLabel("Password : ");
 	        lblPassword_1.setForeground(Color.WHITE);
 	        lblPassword_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-	        lblPassword_1.setBounds(10, 158, 81, 14);
+	        lblPassword_1.setBounds(10, 189, 81, 14);
 	        panel_2_1.add(lblPassword_1);
 	        
-	        passwordField = new JPasswordField();
-	        passwordField.setBounds(84, 155, 172, 20);
-	        panel_2_1.add(passwordField);
+	        password = new JPasswordField();
+	        password.setBounds(84, 186, 172, 20);
+	        panel_2_1.add(password);
 	        
 	        JButton btnSignUp = new JButton("SIGN UP");
+
 	        btnSignUp.setForeground(Color.WHITE);
 	        btnSignUp.setFont(new Font("Tahoma", Font.BOLD, 11));
 	        btnSignUp.setBorderPainted(false);
@@ -81,29 +86,29 @@ public class SignUp extends JPanel {
 	        JLabel as_1_1 = new JLabel("Email : ");
 	        as_1_1.setForeground(Color.WHITE);
 	        as_1_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-	        as_1_1.setBounds(10, 118, 81, 14);
+	        as_1_1.setBounds(10, 149, 81, 14);
 	        panel_2_1.add(as_1_1);
 	        
-	        textField_1 = new JTextField();
-	        textField_1.setColumns(10);
-	        textField_1.setBounds(84, 115, 172, 20);
-	        panel_2_1.add(textField_1);
+	        email = new JTextField();
+	        email.setColumns(10);
+	        email.setBounds(84, 146, 172, 20);
+	        panel_2_1.add(email);
 	        
-	        JFormattedTextField formattedTextField = new JFormattedTextField();
+	        JFormattedTextField number = new JFormattedTextField();
 	        try {
 	            // Define a mask for phone numbers (e.g., (###) ###-####)
 	            MaskFormatter phoneNumberFormatter = new MaskFormatter("###-###-####");
-	            formattedTextField.setFormatterFactory(new DefaultFormatterFactory(phoneNumberFormatter));
+	            number.setFormatterFactory(new DefaultFormatterFactory(phoneNumberFormatter));
 	        } catch (ParseException e) {
 	            e.printStackTrace();
 	        }
-	        formattedTextField.setBounds(84, 198, 89, 20);
-	        panel_2_1.add(formattedTextField);
+	        number.setBounds(84, 229, 89, 20);
+	        panel_2_1.add(number);
 	        
 	        JLabel lblPassword_1_1 = new JLabel("Contact no. : ");
 	        lblPassword_1_1.setForeground(Color.WHITE);
 	        lblPassword_1_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-	        lblPassword_1_1.setBounds(10, 201, 81, 14);
+	        lblPassword_1_1.setBounds(10, 232, 81, 14);
 	        panel_2_1.add(lblPassword_1_1);
 	        
 	        JLabel as_1_2 = new JLabel("Gender : ");
@@ -123,20 +128,57 @@ public class SignUp extends JPanel {
 	        as_1_2_1.setBounds(340, 77, 81, 14);
 	        panel_2_1.add(as_1_2_1);
 	        
-	        JFormattedTextField formattedTextField_1 = new JFormattedTextField();
+	        JFormattedTextField bday = new JFormattedTextField();
 	        try {
 	            // Define a mask for phone numbers (e.g., (###) ###-####)
 	            MaskFormatter bformay = new MaskFormatter("##/##/####");
-	            formattedTextField_1.setFormatterFactory(new DefaultFormatterFactory(bformay));
+	            bday.setFormatterFactory(new DefaultFormatterFactory(bformay));
 	        } catch (ParseException e) {
 	            e.printStackTrace();
 	        }
-	        formattedTextField_1.setBounds(397, 74, 89, 20);
-	        panel_2_1.add(formattedTextField_1);
+	        bday.setBounds(397, 74, 89, 20);
+	        panel_2_1.add(bday);
+	        
+	        JLabel as_1_2_2 = new JLabel("Strand : ");
+	        as_1_2_2.setForeground(Color.WHITE);
+	        as_1_2_2.setFont(new Font("Tahoma", Font.BOLD, 11));
+	        as_1_2_2.setBounds(340, 154, 81, 14);
+	        panel_2_1.add(as_1_2_2);
+	        
+	        JComboBox comboBox_1 = new JComboBox();
+	        comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"ABM", "STEM", "HUMMS", "GAS", "TVL-ICT", "TVL-ANIMATION", "TVL-AUTOMOTIVE"}));
+	        comboBox_1.setBounds(397, 150, 108, 22);
+	        panel_2_1.add(comboBox_1);
+	        
+	        JLabel as_1_3 = new JLabel("Username : ");
+	        as_1_3.setForeground(Color.WHITE);
+	        as_1_3.setFont(new Font("Tahoma", Font.BOLD, 11));
+	        as_1_3.setBounds(10, 77, 81, 14);
+	        panel_2_1.add(as_1_3);
+	        
+	        username = new JTextField();
+	        username.setColumns(10);
+	        username.setBounds(84, 74, 172, 20);
+	        panel_2_1.add(username);
 	        
 	        JPanel panel_3_1 = new JPanel();
 	        panel_3_1.setBounds(287, 438, 186, 95);
 	       add(panel_3_1);
+	        btnSignUp.addMouseListener(new MouseAdapter() {
+	        	@Override
+	        	public void mouseClicked(MouseEvent e) {
+	        		
+	        		boolean a = listen.signup(username.getText(), name.getText(), email.getText(), new String(password.getPassword()),number.getText(), bday.getText(), comboBox.getSelectedItem().toString(), comboBox_1.getSelectedItem().toString());
+	        		if(!a) {
+	        			JOptionPane.showMessageDialog(null, "Something went wrong!");
+	        			return;
+	        		}
+	        		JOptionPane.showMessageDialog(null, "Succesful!");
+	        	}
+	        });
 	}
 
+	public void setListener(Listener listen) {
+		this.listen = listen;
+	}
 }

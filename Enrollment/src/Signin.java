@@ -4,13 +4,16 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Signin extends JPanel {
-
+	private Listener listen;
 	/**
 	 * Create the panel.
 	 */
@@ -52,7 +55,6 @@ public class Signin extends JPanel {
         usname.setBounds(173, 126, 172, 20);
         panel_2.add(usname);
         usname.setColumns(10);
-        
         JLabel lblPassword = new JLabel("Password : ");
         lblPassword.setForeground(Color.WHITE);
         lblPassword.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -64,6 +66,17 @@ public class Signin extends JPanel {
         panel_2.add(pass);
         
         JButton go = new JButton("SIGN IN");
+        go.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseClicked(MouseEvent e) {
+        		if(listen.signin(usname.getText(), new String(pass.getPassword()))) {
+        			JOptionPane.showMessageDialog(null, "Signed In!");
+        			listen.signedin(usname.getText());
+        			return;
+        		}
+        		JOptionPane.showMessageDialog(null, "Username/Password not matched!");
+        	}
+        });
         go.setForeground(new Color(255, 255, 255));
         go.setBorderPainted(false);
         go.setBackground(new Color(0, 255, 0));
@@ -75,5 +88,8 @@ public class Signin extends JPanel {
         panel_3.setBounds(285, 438, 186, 95);
         add(panel_3);
 	}
-
+	
+	public void setListener(Listener listen) {
+		this.listen = listen;
+	}
 }
